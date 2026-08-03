@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="af">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ruben & Bianca se feesviering – 13 Februarie 2027 by Smitsfield Wedding Venue." />
+  <title>Ruben & Bianca | Ons Feesviering</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Modern neutral palette */
+      --ink:#302e2b;
+      --muted:#77716a;
+      --brown:#665d54;
+      --paper:#fcfbf9;
+      --line:#ddd8d1;
+
+      /* Original wedding dress-code palette */
+      --sage:#d9ddbc;
+      --olive:#c5c9a4;
+      --peach:#f0c7a6;
+      --cream:#f4e8b8;
+      --lilac:#d6c8dc;
+      --periwinkle:#c7cde2;
+      --blue:#c7d7dc;
+
+      /* Section backgrounds – all neutral */
+      --soft-cream:#faf8f4;
+      --soft-sage:#f1efeb;
+      --soft-blush:#f6f4f0;
+      --soft-lilac:#ece9e4;
+      --soft-stone:#f4f2ee;
+    }
+
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      background:var(--paper);
+      color:var(--ink);
+      font-family:"Cormorant Garamond", Georgia, serif;
+      font-weight:400;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    img{display:block;max-width:100%;}
+    a{color:inherit;}
+
+    .page{
+      width:min(100%, 1120px);
+      margin:0 auto;
+      padding:0 28px 120px;
+    }
+
+    .hero{
+      position:relative;
+      height:180svh;
+      margin:0 calc(50% - 50vw);
+      overflow:clip;
+    }
+
+    /* Keep the full-bleed photograph in view while the hero scrolls. */
+    .hero-photo{
+      position:sticky;
+      top:0;
+      width:100%;
+      height:100svh;
+      max-width:none;
+    }
+
+    .hero-photo::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to bottom, rgba(0,0,0,.20), rgba(0,0,0,.09) 42%, rgba(0,0,0,.22));
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .hero-photo img{
+      width:100%;
+      height:100svh;
+      aspect-ratio:auto;
+      object-fit:cover;
+      object-position:center;
+    }
+
+    /* Keep the names centred over the photograph throughout the hero scroll. */
+    .hero-text-sticky{
+      position:sticky;
+      top:0;
+      z-index:2;
+      width:100%;
+      height:100svh;
+      margin-top:-100svh;
+      pointer-events:none;
+    }
+
+    .hero-names{
+      width:100%;
+      text-align:center;
+      color:#fff;
+      font-size:clamp(34px, 6vw, 78px);
+      font-weight:400;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      text-shadow:0 2px 22px rgba(0,0,0,.24);
+      padding:0 18px;
+      margin-top:0;
+      position:absolute;
+      top:var(--hero-heading-y, 15svh);
+      left:0;
+    }
+
+    .intro{
+      text-align:center;
+      padding-top:58px;
+    }
+
+    .intro h1,
+    .section-title{
+      margin:0;
+      text-transform:uppercase;
+      font-size:25px;
+      font-weight:500;
+      letter-spacing:.015em;
+    }
+
+    .section-title::after{
+      content:"";
+      display:block;
+      width:34px;
+      height:1px;
+      margin:14px auto 0;
+      background:#a79f95;
+    }
+
+    .intro .date{
+      margin:18px 0 0;
+      font-size:15px;
+      letter-spacing:.01em;
+    }
+
+
+
+    .countdown-section{
+      width:min(760px,100%);
+      margin:58px auto 0;
+      padding:40px 28px 38px;
+      text-align:center;
+      background:var(--soft-stone);
+      border-top:1px solid #ddd8d1;
+      border-bottom:1px solid #ddd8d1;
+    }
+
+    .countdown-title{
+      margin:0 0 23px;
+      text-transform:uppercase;
+      font-size:17px;
+      font-weight:500;
+      letter-spacing:.035em;
+    }
+
+    .countdown{
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      gap:34px;
+      margin:0 auto;
+    }
+
+    .countdown-item{
+      min-width:62px;
+      text-align:center;
+    }
+
+    .countdown-number{
+      display:block;
+      font-size:33px;
+      font-weight:400;
+      line-height:1;
+      font-variant-numeric:tabular-nums;
+    }
+
+    .countdown-label{
+      display:block;
+      margin-top:8px;
+      font-family:"Montserrat", Arial, sans-serif;
+      font-size:8px;
+      font-weight:400;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .countdown-message{
+      display:none;
+      margin:0;
+      font-size:17px;
+    }
+
+    .story{
+      --section-bg:var(--soft-cream);
+      position:relative;
+      margin-top:100px;
+      padding:82px 58px 76px;
+      text-align:center;
+      background:var(--soft-cream);
+    }
+
+    .story::before,
+    .weekend::before,
+    .dress::before,
+    .gifts::before,
+    .final-rsvp::before{
+      content:"";
+      position:absolute;
+      top:28px;
+      left:50%;
+      width:48px;
+      height:1px;
+      transform:translateX(-50%);
+      background:#a79f95;
+    }
+
+    .story::after,
+    .weekend::after,
+    .dress::after,
+    .gifts::after,
+    .final-rsvp::after{
+      content:"";
+      position:absolute;
+      top:24px;
+      left:50%;
+      width:8px;
+      height:8px;
+      transform:translateX(-50%);
+      border-radius:50%;
+      background:#a79f95;
+      box-shadow:0 0 0 5px var(--section-bg, #fff);
+    }
+
+    .story-copy{
+      width:min(680px, 100%);
+      margin:42px auto 0;
+      font-size:16px;
+      line-height:1.58;
+      color:#514d48;
+    }
+
+    .story-copy p{
+      margin:0 0 30px;
+    }
+
+    .story-gallery{
+      width:100%;
+      margin:60px auto 0;
+    }
+
+    .story-gallery-title{
+      margin:0 0 28px;
+      text-align:center;
+      text-transform:uppercase;
+      font-size:16px;
+      font-weight:500;
+      letter-spacing:.12em;
+    }
+
+    .story-carousel{
+      --carousel-gap:14px;
+      position:relative;
+      overflow:hidden;
+      touch-action:pan-y;
+      cursor:grab;
+      user-select:none;
+    }
+
+    .story-carousel.is-dragging{cursor:grabbing;}
+
+    .carousel-track{
+      display:flex;
+      gap:var(--carousel-gap);
+      will-change:transform;
+    }
+
+    .carousel-track.is-animated{
+      transition:transform 800ms cubic-bezier(.22,.61,.36,1);
+    }
+
+    .carousel-slide{
+      flex:0 0 calc((100% - (3 * var(--carousel-gap))) / 4);
+      aspect-ratio:4/5;
+      overflow:hidden;
+      border-radius:3px;
+      background:#e9e5df;
+    }
+
+    .carousel-slide img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      pointer-events:none;
+    }
+
+    .carousel-button{
+      position:absolute;
+      z-index:2;
+      top:50%;
+      width:34px;
+      height:34px;
+      border:1px solid rgba(255,255,255,.72);
+      border-radius:50%;
+      background:rgba(255,255,255,.76);
+      color:#4d4944;
+      font:22px/1 Georgia,serif;
+      cursor:pointer;
+      transform:translateY(-50%);
+      transition:background .2s ease, opacity .2s ease;
+    }
+
+    .carousel-button:hover,
+    .carousel-button:focus-visible{background:rgba(255,255,255,.94);}
+    .carousel-button:focus-visible{outline:2px solid #756e65;outline-offset:2px;}
+    .carousel-prev{left:10px;}
+    .carousel-next{right:10px;}
+
+    .carousel-status{
+      margin:14px 0 0;
+      min-height:1em;
+      text-align:center;
+      color:#8d867e;
+      font-size:10px;
+      letter-spacing:.16em;
+    }
+
+    .weekend{
+      --section-bg:var(--soft-sage);
+      position:relative;
+      margin-top:72px;
+      padding:82px 58px 76px;
+      text-align:center;
+      background:var(--section-bg);
+    }
+
+    .event-block{
+      margin:40px auto 0;
+      width:min(520px,100%);
+    }
+
+    .event-block + .event-block{
+      margin-top:52px;
+    }
+
+    .event-block h3{
+      margin:0 0 7px;
+      font-size:18px;
+      font-weight:500;
+    }
+
+    .event-block p{
+      margin:0;
+      font-size:15px;
+      line-height:1.45;
+    }
+
+    .event-time{
+      margin-top:24px !important;
+      font-size:15px !important;
+    }
+
+    .address{
+      width:min(430px,100%);
+      margin:65px auto 0;
+      padding:24px 24px 22px;
+      background:rgba(255,255,255,.62);
+      border:1px solid rgba(74,70,66,.11);
+    }
+
+    .address h4{
+      margin:0 0 9px;
+      font-size:15px;
+      font-weight:500;
+    }
+
+    .address a{
+      font-family:"Montserrat", Arial, sans-serif;
+      font-size:10px;
+      letter-spacing:.03em;
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
+    .timeline-section{
+      width:min(860px,100%);
+      margin:72px auto 0;
+      padding:52px 46px 50px;
+      text-align:left;
+      background:rgba(255,255,255,.58);
+      border:1px solid rgba(74,70,66,.11);
+    }
+
+    .timeline-kicker{
+      margin:0 0 8px;
+      text-align:center;
+      font-family:"Montserrat", Arial, sans-serif;
+      font-size:12px;
+      letter-spacing:.28em;
+      text-transform:uppercase;
+      color:#817970;
+    }
+
+    .timeline-title{
+      margin:0;
+      text-align:center;
+      font-size:70px;
+      line-height:.95;
+      font-weight:400;
+    }
+
+    .timeline-subtitle{
+      margin:28px auto 0;
+      max-width:720px;
+      text-align:center;
+      font-family:"Montserrat", Arial, sans-serif;
+      font-size:15px;
+      line-height:1.55;
+      color:var(--muted);
+    }
+
+    .day-timeline{
+      position:relative;
+      margin:58px auto 0;
+      width:min(760px,100%);
+      padding-left:108px;
+    }
+
+    .day-timeline::before{
+      content:"";
+      position:absolute;
+      left:110px;
+      top:0;
+      bottom:0;
+      width:1px;
+      background:#cec8c0;
+    }
+
+    .timeline-item{
+      position:relative;
+      display:grid;
+      grid-template-columns:100px 1fr;
+      column-gap:72px;
+      padding-bottom:60px;
+      min-height:112px;
+    }
+
+    .timeline-item:last-child{
+      padding-bottom:0;
+    }
+
+    .timeline-time{
+      margin:0;
+      font-family:"Montserrat", Arial, sans-serif;
+      font-size:14px;
+      font-weight:600;
+      color:var(--ink);
+    }
+
+    .timeline-item::before{
+      content:"";
+      position:absolute;
+      left:101px;
+      top:8px;
+      width:14px;
+      height:14px;
+      border:2px solid #9f978d;
+      background:var(--paper);
+      border-radius:50%;
+      z-index:2;
+    }
+
+    .timeline-item::after{
+      content:"";
+      position:absolute;
+      left:106px;
+      top:13px;
+      width:4px;
+      height:4px;
+      background:#9f978d;
+      border-radius:50%;
+      z-index:3;
+    }
+
+    .timeline-content h3{
+      margin:0 0 10px;
+      font-size:28px;
+      font-weight:500;
+    }
+
+    .timeline-content p{
+      margin:0;
+      font-family:"Montserrat", Arial, sans-serif;
+      font-size:15px;
+      line-height:1.65;
+      color:var(--muted);
+      max-width:520px;
+    }
+
+    .hands-photo{
+      width:325px;
+      max-width:74vw;
+      margin:83px auto 0;
+    }
+
+    .hands-photo img{
+      width:100%;
+      aspect-ratio:914/1370;
+      object-fit:cover;
+    }
+
+    .dress{
+      --section-bg:var(--soft-blush);
+      position:relative;
+      margin-top:72px;
+      padding:78px 58px 74px;
+      text-align:center;
+      background:var(--section-bg);
+    }
+
+    .dress .subhead{
+      margin:16px 0 27px;
+      font-size:17px;
+    }
+
+    .weather-indicator{
+      margin:30px auto 36px;
+      color:var(--ink);
+      text-align:center;
+    }
+
+    .weather-label{
+      margin:0;
+      font-family:"Montserrat", Arial, sans-serif;
+      font-size:10px;
+      font-weight:500;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+    }
+
+    .weather-temperature{
+      margin:11px 0 0;
+      font-size:22px;
+      line-height:1.2;
+      font-weight:500;
+    }
+
+    .weather-note{
+      margin:10px 0 0;
+      font-family:"Montserrat", Arial, sans-serif;
+      font-size:12px;
+      line-height:1.5;
+      color:var(--muted);
+    }
+
+    .weather-link{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      margin-top:17px;
+      min-height:30px;
+      padding:7px 16px 6px;
+      border:1px solid rgba(74,70,66,.32);
+      border-radius:3px;
+      background:transparent;
+      color:var(--ink);
+      font-family:"Cormorant Garamond", Georgia, serif;
+      font-size:9px;
+      letter-spacing:.1em;
+      text-decoration:none;
+      text-transform:uppercase;
+      transition:background .2s ease, border-color .2s ease;
+    }
+
+    .weather-link:hover{
+      border-color:rgba(74,70,66,.52);
+      background:rgba(255,255,255,.28);
+    }
+
+    .weather-link:focus-visible{
+      outline:2px solid #756e65;
+      outline-offset:2px;
+    }
+
+    .dress-grid{
+      width:min(390px,100%);
+      margin:0 auto;
+      font-size:14px;
+      line-height:1.45;
+    }
+
+    .dress-grid strong{
+      display:block;
+      margin-top:14px;
+      font-weight:600;
+    }
+
+    .palette-label{
+      margin-top:64px;
+      font-size:15px;
+    }
+
+    .palette{
+      display:flex;
+      justify-content:center;
+      gap:8px;
+      margin-top:18px;
+    }
+
+    .dot{
+      width:28px;
+      height:28px;
+      border-radius:50%;
+    }
+
+    .accommodation{
+      margin-top:54px;
+      padding-top:32px;
+      text-align:center;
+      border-top:1px solid rgba(74,70,66,.14);
+    }
+
+    .button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-width:196px;
+      min-height:36px;
+      padding:9px 22px 8px;
+      background:var(--brown);
+      color:#fff;
+      border:0;
+      border-radius:5px;
+      text-decoration:none;
+      text-transform:uppercase;
+      font-size:10px;
+      letter-spacing:.08em;
+      font-family:"Cormorant Garamond", Georgia, serif;
+      transition:opacity .2s ease, transform .2s ease;
+    }
+
+    .button:hover{
+      opacity:.9;
+      transform:translateY(-1px);
+    }
+
+    .gifts{
+      --section-bg:var(--soft-lilac);
+      position:relative;
+      width:min(920px,100%);
+      margin:72px auto 0;
+      padding:80px 58px 68px;
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:72px;
+      align-items:center;
+      background:var(--section-bg);
+    }
+
+    .gift-photo{
+      width:100%;
+    }
+
+    .gift-photo img{
+      width:100%;
+      aspect-ratio:1021/1532;
+      object-fit:cover;
+      filter:grayscale(100%);
+    }
+
+    .gift-copy{
+      text-align:center;
+    }
+
+    .gift-copy h2{
+      margin:0 0 24px;
+      font-size:25px;
+      font-weight:500;
+    }
+
+    .gift-copy > p{
+      max-width:360px;
+      margin:0 auto;
+      font-size:15px;
+      line-height:1.5;
+    }
+
+    .bank-details{
+      margin-top:24px;
+      font-size:13px;
+      line-height:1.45;
+    }
+
+    .bank-details p{margin:0;}
+
+    .final-rsvp{
+      --section-bg:var(--soft-cream);
+      position:relative;
+      margin-top:72px;
+      padding:84px 48px 72px;
+      text-align:center;
+      background:var(--section-bg);
+    }
+
+    .final-rsvp h2{
+      margin:0;
+      font-size:31px;
+      font-weight:500;
+      text-transform:uppercase;
+      letter-spacing:.005em;
+    }
+
+    .rsvp-deadline{
+      margin-top:14px;
+      font-size:13px;
+      line-height:1.5;
+      text-transform:uppercase;
+    }
+
+    .rsvp-photo{
+      width:min(565px,86%);
+      margin:31px auto 0;
+    }
+
+    .rsvp-photo img{
+      width:100%;
+      aspect-ratio:1963/1309;
+      object-fit:cover;
+      filter:grayscale(100%);
+    }
+
+    .rsvp-button-wrap{
+      margin-top:36px;
+    }
+
+    .rsvp-button-wrap .button{
+      min-width:190px;
+      font-size:12px;
+    }
+
+    @media (max-width: 700px){
+      .page{
+        padding-left:18px;
+        padding-right:18px;
+        padding-bottom:80px;
+      }
+
+      .hero{height:180svh;}
+      .hero-text-sticky{height:100svh;}
+      .hero-names{font-size:clamp(26px, 10vw, 46px);letter-spacing:.1em;margin-top:0;}
+      .intro{padding-top:46px;}
+      .intro h1,.section-title{font-size:22px;}
+      .intro .date{font-size:12.5px;}
+
+      .countdown-section{margin-top:46px;padding:32px 16px 30px;}
+      .countdown-title{font-size:15px;margin-bottom:20px;}
+      .countdown{gap:20px;}
+      .countdown-item{min-width:48px;}
+      .countdown-number{font-size:28px;}
+      .countdown-label{font-size:7px;margin-top:7px;}
+
+      .story{margin-top:70px;padding:68px 22px 58px;}
+      .story-copy{
+        margin-top:34px;
+        font-size:14.5px;
+        line-height:1.55;
+        width:min(94%,560px);
+      }
+      .story-copy p{margin-bottom:25px;}
+      .story-gallery{margin-top:46px;}
+      .story-gallery-title{margin-bottom:22px;font-size:14px;}
+      .story-carousel{--carousel-gap:12px;}
+      .carousel-button{width:30px;height:30px;font-size:19px;}
+
+      .weekend{margin-top:52px;padding:68px 20px 58px;}
+      .event-block{width:min(94%,450px);margin-top:33px;}
+      .event-block h3{font-size:17px;}
+      .event-block p{font-size:14px;}
+      .event-block + .event-block{margin-top:45px;}
+      .address{margin-top:52px;}
+
+      .timeline-section{margin-top:50px;padding:42px 18px 40px;}
+      .timeline-kicker{font-size:10px;letter-spacing:.22em;}
+      .timeline-title{font-size:46px;line-height:1;}
+      .timeline-subtitle{margin-top:20px;font-size:13.5px;width:min(92%,520px);}
+      .day-timeline{margin-top:42px;padding-left:0;width:min(100%,520px);}
+      .day-timeline::before{left:69px;}
+      .timeline-item{grid-template-columns:70px 1fr;column-gap:34px;padding-bottom:44px;min-height:92px;}
+      .timeline-time{font-size:12px;}
+      .timeline-item::before{left:60px;top:6px;width:12px;height:12px;}
+      .timeline-item::after{left:65px;top:11px;width:4px;height:4px;}
+      .timeline-content h3{font-size:22px;margin-bottom:8px;}
+      .timeline-content p{font-size:13.5px;line-height:1.6;}
+
+      .hands-photo{width:min(54vw,280px);margin-top:67px;}
+      .dress{margin-top:52px;padding:66px 20px 58px;}
+      .dress .subhead{font-size:16px;margin-bottom:22px;}
+      .weather-indicator{margin:26px auto 32px;}
+      .weather-temperature{font-size:20px;}
+      .dress-grid{width:min(92%,360px);font-size:13.5px;}
+      .palette-label{margin-top:52px;}
+      .dot{width:24px;height:24px;}
+      .accommodation{margin-top:54px;}
+
+      .gifts{
+        width:100%;
+        margin-top:52px;
+        padding:68px 22px 58px;
+        grid-template-columns:1fr;
+        gap:44px;
+      }
+      .gift-photo{width:min(64vw,310px);margin:0 auto;}
+      .gift-copy h2{font-size:23px;}
+      .gift-copy > p{font-size:14px;}
+
+      .final-rsvp{margin-top:52px;padding:70px 20px 58px;}
+      .story::before,.weekend::before,.dress::before,.gifts::before,.final-rsvp::before{top:23px;}
+      .story::after,.weekend::after,.dress::after,.gifts::after,.final-rsvp::after{top:19px;}
+      .final-rsvp h2{font-size:24px;line-height:1.15;}
+      .rsvp-photo{width:min(92%,560px);}
+    }
+
+    @media (max-width: 420px){
+      .hero{height:180svh;}
+      .hero-names{font-size:clamp(24px, 9vw, 38px);letter-spacing:.09em;}
+      .countdown{gap:12px;}
+      .countdown-item{min-width:44px;}
+      .countdown-number{font-size:25px;}
+      .story-copy{font-size:14px;}
+      .section-title{font-size:20px;}
+      .timeline-title{font-size:39px;}
+      .day-timeline::before{left:61px;}
+      .timeline-item{grid-template-columns:62px 1fr;column-gap:28px;}
+      .timeline-time{font-size:11px;}
+      .timeline-item::before{left:52px;}
+      .timeline-item::after{left:57px;}
+      .timeline-content h3{font-size:20px;}
+      .palette{gap:6px;}
+      .dot{width:22px;height:22px;}
+      .final-rsvp h2{font-size:21px;}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .hero-names{top:15svh !important;}
+      .carousel-track.is-animated{transition:none;}
+      .carousel-button{transition:none;}
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <section class="hero" aria-label="Ruben en Bianca">
+      <div class="hero-photo">
+        <img src="images/hero.jpg" alt="Ruben en Bianca" />
+      </div>
+      <div class="hero-text-sticky">
+        <div class="hero-names">Ruben &amp; Bianca</div>
+      </div>
+    </section>
+
+    <section class="intro">
+      <h1>Ons Feesviering</h1>
+      <p class="date">13 Februarie 2027 | Smitsfields Wedding Venue, Mpumalanga</p>
+    </section>
+
+
+
+    <section class="countdown-section" aria-label="Aftelling tot ons groot dag">
+      <h2 class="countdown-title">Aftelling tot ons groot dag</h2>
+
+      <div class="countdown" id="countdown">
+        <div class="countdown-item">
+          <span class="countdown-number" id="days">000</span>
+          <span class="countdown-label">Dae</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="hours">00</span>
+          <span class="countdown-label">Ure</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="minutes">00</span>
+          <span class="countdown-label">Minute</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="seconds">00</span>
+          <span class="countdown-label">Sekondes</span>
+        </div>
+      </div>
+
+      <p class="countdown-message" id="countdown-message">Vandag is ons groot dag!</p>
+    </section>
+
+    <section class="story" id="ons-storie">
+      <h2 class="section-title">Ons Storie</h2>
+
+      <div class="story-copy">
+        <p>
+          Ons storie het nie met ’n groot oomblik begin nie. Daar was geen enkele dag waarop alles skielik
+          anders geword het nie. Dit het eerder stilweg begin, iewers tussen naweke saam met vriende en die
+          studentelewe by 36 Murraystraat, waar Bianca in ’n kommune saam met vier vriende ingetrek het.
+          Dit was eenvoudig dit: goeie vriende, ’n huis vol studente, en die sekerheid dat vriendskap al was
+          wat dit ooit sou wees. Ons het min geweet dat dit presies was waar die Here ons op daardie stadium
+          van ons lewens wou plaas. Ons kon ure aaneen praat, en wanneer die ure verby was, steeds iets hê
+          om vir mekaar te sê. Ons het elke stukkie daglig probeer uitrek: nog ’n gesprek, nog ’n koppie koffie,
+          nog ’n paar minute saam. Iewers tussen al daardie gewone dae het ons, sonder om dit ooit te besluit,
+          die persoon geword na wie die ander een altyd eerste gesoek het. Sonder haas, sonder druk, en
+          amper sonder dat ons dit self agtergekom het, het ons vriendskap begin groei tot iets waarvoor nie
+          een van ons aanvanklik ’n naam gehad het nie, al het ons vriende dit, lank voor ons, reeds duidelik
+          raakgesien.
+        </p>
+
+        <p>
+          Ons liefde het gekom soos sonlig wat vroegoggend deur ’n venster val. Eers net ’n dun streep lig oor
+          die vloer, sag, warm en maklik om mis te kyk. Maar sonlig vra nie toestemming om ’n vertrek binne
+          te kom nie. Dit beweeg stadig verder, raak aan die mure, vind die stil hoeke, en vul mettertyd
+          ruimtes waarvan ons nie eens geweet het daar was donkerte nie. Só het ons liefde ook gegroei. Daar
+          was nie een groot oomblik waarin ons wêreld skielik verander het nie; dit was eerder honderde
+          klein oomblikke wat ongemerk iets groters begin vorm het. Vriendskap het in respek verdiep,
+          respek het vertroue gebou, en uit daardie vertroue het liefde gegroei. Die persoon met wie ons ure
+          kon gesels, het die persoon geword wie se hart ons bewonder, wie se oordeel ons vertrou, en langs
+          wie ons wil groei. Stadig het ons mekaar se mense geword sonder wie ons ons dae nie meer kon
+          voorstel nie. Voor ons kon agterkom presies wanneer dit alles gebeur het, was die hele huis al
+          helder.
+        </p>
+
+        <p>
+          Miskien is dit waarom ons liefde vir ons so kosbaar is: dit hoef nooit hard te wees om diep te wees
+          nie. Dit leef in die klein ruimtes van die alledaagse, in gesprekke wat nooit opraak nie, in die lag, in
+          die stilte waarin ons steeds naby voel, en in die sekerheid dat ons deur elke seisoen weer na mekaar
+          toe sal draai. Ons het in mekaar nie net iemand gevind om lief te hê nie, maar ’n beste vriend, ’n
+          veilige plek, en uiteindelik iets wat soos tuiskoms voel. Ons weet die lewe sal nie altyd uit helder dae
+          bestaan nie, en dat die son soms agter wolke sal verdwyn. Maar miskien is dít die mooiste deel van
+          alles: die lig waarmee ons begin het, skyn lankal nie meer net van buite deur die venster nie, dit het
+          deel van ons huis geword. En nou kry ons die voorreg om vir die res van ons lewe saam daarin te
+          woon.
+        </p>
+      </div>
+
+      <div class="story-gallery">
+        <div class="story-carousel" id="story-carousel" aria-label="Foto’s van Ruben en Bianca" aria-roledescription="carousel">
+          <div class="carousel-track" id="carousel-track" aria-live="off"></div>
+          <button class="carousel-button carousel-prev" type="button" aria-label="Vorige foto">‹</button>
+          <button class="carousel-button carousel-next" type="button" aria-label="Volgende foto">›</button>
+        </div>
+        <p class="carousel-status" id="carousel-status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="weekend" id="naweek">
+      <h2 class="section-title">Inligting vir die Naweek</h2>
+
+      <div class="event-block">
+        <h3>Die Begin Van die Naweek</h3>
+        <p>
+          Ons verwelkom al ons gaste wat die naweek saam met ons by<br>
+          Smitsfield kan deurbring om Vrydagaand die Marx Makietie saam<br>
+          af te skop met lekker kos, goeie geselskap en ’n<br>
+          ontspanne kuier.
+        </p>
+        <p class="event-time">Vrydag 18:00 vir 19:00</p>
+      </div>
+
+      <section class="timeline-section" aria-label="Ons groot dag se verloop">
+        <p class="timeline-kicker">Verloop van die dag</p>
+        <h3 class="timeline-title">Ons Groot Dag</h3>
+        <p class="timeline-subtitle">
+          Die tye hieronder dien as ’n riglyn en kan effens verander gedurende die viering.
+        </p>
+
+        <div class="day-timeline">
+          <div class="timeline-item">
+            <p class="timeline-time">14:00</p>
+            <div class="timeline-content">
+              <h3>Gaste arriveer</h3>
+              <p>Geniet iets om te drink en vind rustig julle sitplekke voordat die seremonie begin.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <p class="timeline-time">14:30</p>
+            <div class="timeline-content">
+              <h3>Seremonie</h3>
+              <p>Kom vier saam met ons wanneer ons ons geloftes aflê en ons nuwe hoofstuk as man en vrou begin.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <p class="timeline-time">15:45</p>
+            <div class="timeline-content">
+              <h3>Foto’s &amp; verversings</h3>
+              <p>Neem saam met ons foto’s, geniet ligte verversings en kuier gesellig terwyl die vieringe voortgaan.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <p class="timeline-time">18:30</p>
+            <div class="timeline-content">
+              <h3>Onthaal</h3>
+              <p>Ons beweeg oor na die onthaal vir die aand se verwelkoming, aandete, toesprake en lekker saamkuier.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <p class="timeline-time">20:00</p>
+            <div class="timeline-content">
+              <h3>Eerste dans &amp; partytjie</h3>
+              <p>Sluit by ons aan vir ons eerste dans en ’n feestelike aand op die dansvloer saam met familie en vriende.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="address">
+        <h4>Adres</h4>
+        <a href="https://www.google.com/maps/search/?api=1&query=Smitsfield+Wedding+Venue+Lothair+Rd" target="_blank" rel="noopener">
+          Smitsfield Wedding Venue, Lothair Rd
+        </a>
+      </div>
+
+      <div class="hands-photo">
+        <img src="images/Hands Close Up.jpg" alt="Ruben en Bianca hou hande vas" />
+      </div>
+    </section>
+
+    <section class="dress" id="kleredrag">
+      <h2 class="section-title">Kleredrag</h2>
+      <p class="subhead">SOMERFORMEEL</p>
+
+      <div class="weather-indicator" aria-label="Verwagte temperatuur">
+        <p class="weather-label">Verwagte temperatuur</p>
+        <p class="weather-temperature">14°C - 27°C</p>
+        <p class="weather-note">’n Ligte baadjie vir die aand word aanbeveel.</p>
+        <a
+          class="weather-link"
+          href="https://www.google.com/search?q=Smitsfield+Mpumalanga+weather+forecast"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Weervoorspelling</a>
+      </div>
+
+      <div class="dress-grid">
+        <strong>Mans</strong>
+        <div>Formele drag. Voltooi asseblief jou voorkoms<br>met ’n baadjie en/of das.</div>
+
+        <strong>Dames</strong>
+        <div>Sagte pastelkleure word verwelkom. Vermy<br>asseblief wit en pienk.</div>
+      </div>
+
+      <div class="palette-label">Kleurskema</div>
+      <div class="palette" aria-label="Kleurskema">
+        <span class="dot" style="background:var(--sage)"></span>
+        <span class="dot" style="background:var(--olive)"></span>
+        <span class="dot" style="background:var(--peach)"></span>
+        <span class="dot" style="background:var(--cream)"></span>
+        <span class="dot" style="background:var(--lilac)"></span>
+        <span class="dot" style="background:var(--periwinkle)"></span>
+        <span class="dot" style="background:var(--blue)"></span>
+      </div>
+
+      <div class="accommodation">
+        <!-- Replace # with your accommodation page/link when ready. -->
+        <a class="button" href="https://ugc.production.linktr.ee/3744183c-4114-49c8-b111-eed2c923d9f3_Alternative-accommodation---4-.pdf-3.pdf">Verblyf in die Area</a>
+      </div>
+    </section>
+
+    <section class="gifts" id="geskenke">
+      <div class="gift-photo">
+        <img src="images/gifts.jpg" alt="Ruben en Bianca" />
+      </div>
+
+      <div class="gift-copy">
+        <h2>Geskenke</h2>
+        <p>
+          Jou teenwoordigheid is vir ons meer as genoeg,<br>
+          maar indien jy graag ’n bydrae wil maak vir<br>
+          ons nuwe tuiste sal ons dit baie waardeer.
+        </p>
+
+        <div class="bank-details">
+          <p>Bank: FNB/RMB</p> 
+          <p>Account Holder: Ruben Marx</p>
+          <p>Account Type: FNB Aspire Current Account</p>
+          <p>Branch Code: 250655</p>
+          <p>Account Number: 62936507716</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-rsvp" id="rsvp">
+      <h2>Ons sien uit om saam met julle fees te vier!</h2>
+      <div class="rsvp-deadline">
+        RSVP ASSEBLIEF VOOR<br>
+        13 NOVEMBER 2026
+      </div>
+
+      <div class="rsvp-photo">
+        <img src="images/rsvp.jpg" alt="Ruben en Bianca stap saam" />
+      </div>
+
+      <div class="rsvp-button-wrap">
+        <!-- Replace YOUR-RSVP-FORM-LINK-HERE with your Google Form / RSVP URL. -->
+        <a class="button" href="https://forms.gle/ynLiAT72tqPm9st27" target="_blank" rel="noopener">RSVP</a>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Wedding ceremony: 13 February 2027 at 15:30, South Africa time (UTC+2)
+    const weddingDate = new Date("2027-02-13T15:30:00+02:00").getTime();
+
+    const daysEl = document.getElementById("days");
+    const hoursEl = document.getElementById("hours");
+    const minutesEl = document.getElementById("minutes");
+    const secondsEl = document.getElementById("seconds");
+    const countdownEl = document.getElementById("countdown");
+    const messageEl = document.getElementById("countdown-message");
+
+    function updateCountdown() {
+      const now = Date.now();
+      const distance = weddingDate - now;
+
+      if (distance <= 0) {
+        countdownEl.style.display = "none";
+        messageEl.style.display = "block";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      daysEl.textContent = String(days).padStart(3, "0");
+      hoursEl.textContent = String(hours).padStart(2, "0");
+      minutesEl.textContent = String(minutes).padStart(2, "0");
+      secondsEl.textContent = String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    (() => {
+      const hero = document.querySelector(".hero");
+      const heading = document.querySelector(".hero-names");
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      let frameRequested = false;
+
+      function positionHeroHeading() {
+        frameRequested = false;
+        const viewportHeight = window.innerHeight;
+        const heroBounds = hero.getBoundingClientRect();
+        const scrollDistance = Math.max(1, hero.offsetHeight - viewportHeight);
+        const progress = reducedMotion.matches
+          ? 0
+          : Math.min(1, Math.max(0, -heroBounds.top / scrollDistance));
+        const upperPosition = viewportHeight * .15;
+        const lowerPosition = viewportHeight - heading.offsetHeight - (viewportHeight * .1);
+        const position = upperPosition + ((lowerPosition - upperPosition) * progress);
+        heading.style.setProperty("--hero-heading-y", `${Math.max(0, position)}px`);
+      }
+
+      function requestHeadingPosition() {
+        if (frameRequested) return;
+        frameRequested = true;
+        requestAnimationFrame(positionHeroHeading);
+      }
+
+      window.addEventListener("scroll", requestHeadingPosition, { passive:true });
+      window.addEventListener("resize", requestHeadingPosition);
+      reducedMotion.addEventListener("change", requestHeadingPosition);
+      positionHeroHeading();
+    })();
+
+    (() => {
+      const carousel = document.getElementById("story-carousel");
+      const track = document.getElementById("carousel-track");
+      const status = document.getElementById("carousel-status");
+      const previousButton = carousel.querySelector(".carousel-prev");
+      const nextButton = carousel.querySelector(".carousel-next");
+      const directoryUrl = new URL("image%20carousel/", document.baseURI);
+      const supportedImage = /\.(?:jpe?g|png|webp|avif)$/i;
+      const cloneCount = 4;
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      let images = [];
+      let currentIndex = cloneCount;
+      let autoplayTimer;
+      let resumeTimer;
+      let pointerStart = 0;
+      let dragOffset = 0;
+      let dragging = false;
+
+      const slideStep = () => {
+        const gap = parseFloat(getComputedStyle(track).gap) || 0;
+        const slide = track.querySelector(".carousel-slide");
+        return slide ? slide.getBoundingClientRect().width + gap : 0;
+      };
+
+      const logicalIndex = () => ((currentIndex - cloneCount) % images.length + images.length) % images.length;
+
+      function updatePosition(animate = true, offset = 0) {
+        track.classList.toggle("is-animated", animate && !reducedMotion.matches);
+        track.style.transform = `translate3d(${-currentIndex * slideStep() + offset}px, 0, 0)`;
+        if (images.length) status.textContent = `${logicalIndex() + 1} / ${images.length}`;
+      }
+
+      function move(direction) {
+        currentIndex += direction;
+        updatePosition(true);
+      }
+
+      function stopAutoplay() {
+        window.clearInterval(autoplayTimer);
+        window.clearTimeout(resumeTimer);
+      }
+
+      function startAutoplay() {
+        stopAutoplay();
+        if (
+          !reducedMotion.matches &&
+          !document.hidden &&
+          !dragging &&
+          !carousel.matches(":hover") &&
+          !carousel.matches(":focus-within") &&
+          images.length > 4
+        ) {
+          autoplayTimer = window.setInterval(() => move(1), 3500);
+        }
+      }
+
+      function resumeAutoplaySoon() {
+        stopAutoplay();
+        resumeTimer = window.setTimeout(startAutoplay, 1800);
+      }
+
+      function makeSlide(source, originalIndex, clone = false) {
+        const slide = document.createElement("div");
+        const image = document.createElement("img");
+        slide.className = "carousel-slide";
+        slide.setAttribute("role", "group");
+        slide.setAttribute("aria-label", `Foto ${originalIndex + 1} van ${images.length}`);
+        if (clone) slide.setAttribute("aria-hidden", "true");
+        image.src = source;
+        image.alt = clone ? "" : `Ruben en Bianca, foto ${originalIndex + 1}`;
+        image.width = 800;
+        image.height = 1000;
+        image.decoding = "async";
+        image.loading = originalIndex < 4 ? "eager" : "lazy";
+        slide.append(image);
+        return slide;
+      }
+
+      function render() {
+        const before = images.slice(-cloneCount);
+        const after = images.slice(0, cloneCount);
+        const fragment = document.createDocumentFragment();
+        before.forEach((source, index) => fragment.append(makeSlide(source, images.length - before.length + index, true)));
+        images.forEach((source, index) => fragment.append(makeSlide(source, index)));
+        after.forEach((source, index) => fragment.append(makeSlide(source, index, true)));
+        track.replaceChildren(fragment);
+        currentIndex = cloneCount;
+        requestAnimationFrame(() => updatePosition(false));
+        startAutoplay();
+      }
+
+      async function loadImages() {
+        try {
+          const response = await fetch(directoryUrl);
+          if (!response.ok) throw new Error("Die fotolêer kon nie gelees word nie.");
+          const listing = new DOMParser().parseFromString(await response.text(), "text/html");
+          const directoryPath = directoryUrl.pathname.endsWith("/") ? directoryUrl.pathname : `${directoryUrl.pathname}/`;
+          const uniqueSources = new Set();
+
+          listing.querySelectorAll("a[href]").forEach(link => {
+            const source = new URL(link.getAttribute("href"), directoryUrl);
+            const relativePath = decodeURIComponent(source.pathname.slice(directoryPath.length));
+            if (
+              source.origin === directoryUrl.origin &&
+              source.pathname.startsWith(directoryPath) &&
+              relativePath &&
+              !relativePath.startsWith(".") &&
+              !relativePath.includes("/") &&
+              supportedImage.test(relativePath)
+            ) uniqueSources.add(source.href);
+          });
+
+          images = [...uniqueSources].sort((a, b) => decodeURIComponent(a).localeCompare(decodeURIComponent(b), undefined, { numeric:true }));
+          if (!images.length) throw new Error("Geen ondersteunde foto’s is gevind nie.");
+          render();
+        } catch (error) {
+          status.textContent = error.message;
+          previousButton.hidden = true;
+          nextButton.hidden = true;
+        }
+      }
+
+      track.addEventListener("transitionend", event => {
+        if (event.propertyName !== "transform") return;
+        if (currentIndex >= images.length + cloneCount) currentIndex -= images.length;
+        if (currentIndex < cloneCount) currentIndex += images.length;
+        updatePosition(false);
+      });
+
+      previousButton.addEventListener("click", () => { stopAutoplay(); move(-1); resumeAutoplaySoon(); });
+      nextButton.addEventListener("click", () => { stopAutoplay(); move(1); resumeAutoplaySoon(); });
+      carousel.addEventListener("mouseenter", stopAutoplay);
+      carousel.addEventListener("mouseleave", () => { if (!dragging) resumeAutoplaySoon(); });
+      carousel.addEventListener("focusin", stopAutoplay);
+      carousel.addEventListener("focusout", resumeAutoplaySoon);
+
+      carousel.addEventListener("pointerdown", event => {
+        if (event.target.closest("button")) return;
+        dragging = true;
+        pointerStart = event.clientX;
+        dragOffset = 0;
+        stopAutoplay();
+        carousel.classList.add("is-dragging");
+        carousel.setPointerCapture(event.pointerId);
+        track.classList.remove("is-animated");
+      });
+
+      carousel.addEventListener("pointermove", event => {
+        if (!dragging) return;
+        dragOffset = event.clientX - pointerStart;
+        updatePosition(false, dragOffset);
+      });
+
+      function finishDrag(event) {
+        if (!dragging) return;
+        dragging = false;
+        carousel.classList.remove("is-dragging");
+        if (carousel.hasPointerCapture(event.pointerId)) carousel.releasePointerCapture(event.pointerId);
+        if (Math.abs(dragOffset) > Math.min(50, slideStep() * .2)) move(dragOffset < 0 ? 1 : -1);
+        else updatePosition(true);
+        resumeAutoplaySoon();
+      }
+
+      carousel.addEventListener("pointerup", finishDrag);
+      carousel.addEventListener("pointercancel", finishDrag);
+      window.addEventListener("resize", () => updatePosition(false));
+      document.addEventListener("visibilitychange", () => document.hidden ? stopAutoplay() : startAutoplay());
+      reducedMotion.addEventListener("change", startAutoplay);
+      loadImages();
+    })();
+  </script>
+
+</body>
+</html>

@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
   <link rel="preload" href="images/hero.jpg" as="image" fetchpriority="high">
 
   <style>
@@ -37,16 +37,38 @@
       --soft-stone:#f4f2ee;
     }
 
-    *{box-sizing:border-box;}
+    *,
+    *::before,
+    *::after{
+      box-sizing:border-box;
+      font-family:"Cormorant Garamond", serif;
+    }
     html{scroll-behavior:smooth;}
     body{
       margin:0;
       background:var(--paper);
       color:var(--ink);
-      font-family:"Cormorant Garamond", Georgia, serif;
+      font-family:"Cormorant Garamond", serif;
       font-weight:400;
       -webkit-font-smoothing:antialiased;
       overflow-x:hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6{
+      font-weight:400;
+      line-height:1.05;
+      letter-spacing:0;
+    }
+
+    p{
+      font-weight:400;
+      line-height:1.65;
+      letter-spacing:.01em;
     }
 
     img{display:block;max-width:100%;}
@@ -102,15 +124,18 @@
       pointer-events:none;
       display:grid;
       place-items:center;
+      overflow:clip;
     }
 
     .hero-names{
       width:min(100%, 860px);
       text-align:center;
       color:#fff;
+      font-family:"Cormorant Garamond", serif;
       font-size:clamp(34px, 6vw, 78px);
       font-weight:400;
-      letter-spacing:.12em;
+      letter-spacing:0;
+      line-height:1.05;
       text-transform:uppercase;
       text-shadow:0 2px 22px rgba(0,0,0,.24);
       padding:0 clamp(18px, 5vw, 32px);
@@ -129,8 +154,9 @@
       margin:0;
       text-transform:uppercase;
       font-size:clamp(22px, 2.2vw, 25px);
-      font-weight:500;
-      letter-spacing:.015em;
+      font-weight:400;
+      letter-spacing:0;
+      line-height:1.05;
     }
 
     .section-title::after{
@@ -144,8 +170,21 @@
 
     .intro .date{
       margin:18px 0 0;
-      font-size:15px;
       letter-spacing:.01em;
+      line-height:1.65;
+    }
+
+    .intro .wedding-date,
+    .intro .wedding-venue{
+      display:block;
+    }
+
+    .intro .wedding-date{
+      font-size:22px;
+    }
+
+    .intro .wedding-venue{
+      font-size:16px;
     }
 
 
@@ -165,7 +204,7 @@
       text-transform:uppercase;
       font-size:17px;
       font-weight:500;
-      letter-spacing:.035em;
+      letter-spacing:.18em;
     }
 
     .countdown{
@@ -192,10 +231,9 @@
     .countdown-label{
       display:block;
       margin-top:8px;
-      font-family:"Montserrat", Arial, sans-serif;
       font-size:8px;
-      font-weight:400;
-      letter-spacing:.12em;
+      font-weight:500;
+      letter-spacing:.18em;
       text-transform:uppercase;
       color:var(--muted);
     }
@@ -204,6 +242,8 @@
       display:none;
       margin:0;
       font-size:17px;
+      line-height:1.65;
+      letter-spacing:.01em;
     }
 
     .story{
@@ -251,7 +291,8 @@
       width:min(680px, 100%);
       margin:42px auto 0;
       font-size:16px;
-      line-height:1.58;
+      line-height:1.65;
+      letter-spacing:.01em;
       color:#514d48;
     }
 
@@ -270,7 +311,7 @@
       text-transform:uppercase;
       font-size:16px;
       font-weight:500;
-      letter-spacing:.12em;
+      letter-spacing:.18em;
     }
 
     .story-carousel{
@@ -332,7 +373,11 @@
       border-radius:50%;
       background:rgba(255,255,255,.76);
       color:#4d4944;
-      font:22px/1 Georgia,serif;
+      font-size:22px;
+      font-weight:500;
+      line-height:1;
+      letter-spacing:.12em;
+      text-transform:uppercase;
       cursor:pointer;
       transform:translateY(-50%);
       transition:background .2s ease, opacity .2s ease;
@@ -374,13 +419,16 @@
     .event-block h3{
       margin:0 0 7px;
       font-size:18px;
-      font-weight:500;
+      font-weight:400;
+      line-height:1.05;
+      letter-spacing:0;
     }
 
     .event-block p{
       margin:0;
       font-size:15px;
-      line-height:1.45;
+      line-height:1.65;
+      letter-spacing:.01em;
     }
 
     .event-time{
@@ -399,13 +447,16 @@
     .address h4{
       margin:0 0 9px;
       font-size:15px;
-      font-weight:500;
+      font-weight:400;
+      line-height:1.05;
+      letter-spacing:0;
     }
 
     .address a{
-      font-family:"Montserrat", Arial, sans-serif;
       font-size:10px;
-      letter-spacing:.03em;
+      font-weight:400;
+      line-height:1.65;
+      letter-spacing:.01em;
       text-decoration:underline;
       text-underline-offset:3px;
     }
@@ -422,9 +473,9 @@
     .timeline-kicker{
       margin:0 0 8px;
       text-align:center;
-      font-family:"Montserrat", Arial, sans-serif;
       font-size:12px;
-      letter-spacing:.28em;
+      font-weight:500;
+      letter-spacing:.18em;
       text-transform:uppercase;
       color:#817970;
     }
@@ -433,17 +484,19 @@
       margin:0;
       text-align:center;
       font-size:clamp(46px, 8vw, 70px);
-      line-height:.95;
+      line-height:1.05;
       font-weight:400;
+      letter-spacing:0;
     }
 
     .timeline-subtitle{
       margin:28px auto 0;
       max-width:720px;
       text-align:center;
-      font-family:"Montserrat", Arial, sans-serif;
       font-size:15px;
-      line-height:1.55;
+      font-weight:400;
+      line-height:1.65;
+      letter-spacing:.01em;
       color:var(--muted);
     }
 
@@ -451,26 +504,19 @@
       position:relative;
       margin:58px auto 0;
       width:min(760px,100%);
-      padding-left:108px;
-    }
-
-    .day-timeline::before{
-      content:"";
-      position:absolute;
-      left:110px;
-      top:0;
-      bottom:0;
-      width:1px;
-      background:#cec8c0;
+      padding-left:0;
     }
 
     .timeline-item{
       position:relative;
+      --marker-x:calc(110px + 24px);
+      --marker-y:calc(4px + 7px);
       display:grid;
-      grid-template-columns:100px 1fr;
-      column-gap:72px;
-      padding-bottom:60px;
-      min-height:112px;
+      grid-template-columns:110px 48px minmax(0, 1fr);
+      column-gap:24px;
+      align-items:start;
+      padding:0;
+      min-height:123px;
     }
 
     .timeline-item:last-child{
@@ -478,49 +524,64 @@
     }
 
     .timeline-time{
+      grid-column:1;
       margin:0;
-      font-family:"Montserrat", Arial, sans-serif;
-      font-size:14px;
-      font-weight:600;
+      padding-top:4px;
+      font-size:22px;
+      font-weight:400;
+      line-height:1.65;
+      letter-spacing:.01em;
       color:var(--ink);
+      align-self:start;
+      text-align:left;
+      transform:translateY(-10px);
+    }
+
+    .timeline-content{
+      grid-column:3;
+      min-width:0;
+      align-self:start;
     }
 
     .timeline-item::before{
       content:"";
       position:absolute;
-      left:101px;
-      top:8px;
+      left:var(--marker-x);
+      top:var(--marker-y);
       width:14px;
       height:14px;
       border:2px solid #9f978d;
-      background:var(--paper);
       border-radius:50%;
+      background:var(--paper);
+      transform:translate(-50%, -50%);
       z-index:2;
     }
 
-    .timeline-item::after{
+    .timeline-item:not(:last-child)::after{
       content:"";
       position:absolute;
-      left:106px;
-      top:13px;
-      width:4px;
-      height:4px;
-      background:#9f978d;
-      border-radius:50%;
-      z-index:3;
+      left:var(--marker-x);
+      top:var(--marker-y);
+      width:1px;
+      height:100%;
+      background:#d2cbc2;
+      transform:translateX(-50%);
+      z-index:1;
     }
 
     .timeline-content h3{
-      margin:0 0 10px;
+      margin:0 0 14px;
       font-size:28px;
-      font-weight:500;
+      font-weight:400;
+      line-height:1.05;
+      letter-spacing:0;
     }
 
     .timeline-content p{
       margin:0;
-      font-family:"Montserrat", Arial, sans-serif;
       font-size:15px;
       line-height:1.65;
+      letter-spacing:.01em;
       color:var(--muted);
       max-width:520px;
     }
@@ -549,6 +610,9 @@
     .dress .subhead{
       margin:16px 0 27px;
       font-size:17px;
+      font-weight:500;
+      text-transform:uppercase;
+      letter-spacing:.18em;
     }
 
     .weather-indicator{
@@ -559,7 +623,6 @@
 
     .weather-label{
       margin:0;
-      font-family:"Montserrat", Arial, sans-serif;
       font-size:10px;
       font-weight:500;
       letter-spacing:.18em;
@@ -569,15 +632,17 @@
     .weather-temperature{
       margin:11px 0 0;
       font-size:22px;
-      line-height:1.2;
-      font-weight:500;
+      line-height:1.65;
+      font-weight:400;
+      letter-spacing:.01em;
     }
 
     .weather-note{
       margin:10px 0 0;
-      font-family:"Montserrat", Arial, sans-serif;
       font-size:12px;
-      line-height:1.5;
+      font-weight:400;
+      line-height:1.65;
+      letter-spacing:.01em;
       color:var(--muted);
     }
 
@@ -592,9 +657,10 @@
       border-radius:3px;
       background:transparent;
       color:var(--ink);
-      font-family:"Cormorant Garamond", Georgia, serif;
+      font-family:"Cormorant Garamond", serif;
       font-size:9px;
-      letter-spacing:.1em;
+      font-weight:500;
+      letter-spacing:.12em;
       text-decoration:none;
       text-transform:uppercase;
       transition:background .2s ease, border-color .2s ease;
@@ -614,18 +680,23 @@
       width:min(390px,100%);
       margin:0 auto;
       font-size:14px;
-      line-height:1.45;
+      font-weight:400;
+      line-height:1.65;
+      letter-spacing:.01em;
     }
 
     .dress-grid strong{
       display:block;
       margin-top:14px;
-      font-weight:600;
+      font-weight:400;
     }
 
     .palette-label{
       margin-top:64px;
       font-size:15px;
+      font-weight:400;
+      line-height:1.65;
+      letter-spacing:.01em;
     }
 
     .palette{
@@ -648,6 +719,38 @@
       border-top:1px solid rgba(74,70,66,.14);
     }
 
+    .accommodation-notice{
+      width:min(650px, 100%);
+      margin:0 auto 24px;
+      padding:24px 28px;
+      border:1px solid #ddd5cb;
+      border-radius:8px;
+      background:#faf8f5;
+      text-align:center;
+    }
+
+    .accommodation-notice h3{
+      margin:0 0 10px;
+      font-size:20px;
+      font-weight:400;
+      line-height:1.05;
+      letter-spacing:0;
+      text-transform:none;
+    }
+
+    .accommodation-notice p{
+      margin:0;
+      font-size:13px;
+      font-weight:400;
+      line-height:1.65;
+      letter-spacing:.01em;
+      color:var(--muted);
+    }
+
+    .accommodation-notice p + p{
+      margin-top:16px;
+    }
+
     .button{
       display:inline-flex;
       align-items:center;
@@ -662,8 +765,9 @@
       text-decoration:none;
       text-transform:uppercase;
       font-size:10px;
-      letter-spacing:.08em;
-      font-family:"Cormorant Garamond", Georgia, serif;
+      font-weight:500;
+      letter-spacing:.12em;
+      font-family:"Cormorant Garamond", serif;
       transition:opacity .2s ease, transform .2s ease;
     }
 
@@ -703,20 +807,26 @@
     .gift-copy h2{
       margin:0 0 24px;
       font-size:25px;
-      font-weight:500;
+      font-weight:400;
+      line-height:1.05;
+      letter-spacing:0;
     }
 
     .gift-copy > p{
       max-width:360px;
       margin:0 auto;
       font-size:15px;
-      line-height:1.5;
+      font-weight:400;
+      line-height:1.65;
+      letter-spacing:.01em;
     }
 
     .bank-details{
       margin-top:24px;
       font-size:13px;
-      line-height:1.45;
+      font-weight:400;
+      line-height:1.65;
+      letter-spacing:.01em;
     }
 
     .bank-details p{margin:0;}
@@ -733,15 +843,18 @@
     .final-rsvp h2{
       margin:0;
       font-size:clamp(24px, 3vw, 31px);
-      font-weight:500;
+      font-weight:400;
       text-transform:uppercase;
-      letter-spacing:.005em;
+      letter-spacing:0;
+      line-height:1.05;
     }
 
     .rsvp-deadline{
       margin-top:14px;
       font-size:13px;
-      line-height:1.5;
+      font-weight:400;
+      line-height:1.65;
+      letter-spacing:.01em;
       text-transform:uppercase;
     }
 
@@ -774,11 +887,28 @@
       }
 
       .hero{height:180svh;}
-      .hero-text-sticky{height:100svh;}
-      .hero-names{font-size:clamp(26px, 10vw, 46px);letter-spacing:.1em;margin-top:0;}
+      .hero-text-sticky{
+        height:100svh;
+        display:block;
+        padding-top:env(safe-area-inset-top, 0px);
+      }
+      .hero-names{
+        position:absolute;
+        top:0;
+        left:50%;
+        width:max-content;
+        max-width:none;
+        white-space:nowrap;
+        padding:0;
+        margin:0;
+        transform:translate(-50%, var(--hero-heading-y, 0px));
+        font-size:clamp(22px, 7.4vw, 38px);
+        letter-spacing:0;
+      }
       .intro{padding-top:46px;}
       .intro h1,.section-title{font-size:22px;}
-      .intro .date{font-size:12.5px;}
+      .intro .wedding-date{font-size:20px;}
+      .intro .wedding-venue{font-size:13.5px;}
 
       .countdown-section{margin-top:46px;padding:32px 16px 30px;}
       .countdown-title{font-size:15px;margin-bottom:20px;}
@@ -791,7 +921,7 @@
       .story-copy{
         margin-top:34px;
         font-size:14.5px;
-        line-height:1.55;
+        line-height:1.65;
         width:min(94%,560px);
       }
       .story-copy p{margin-bottom:25px;}
@@ -808,17 +938,17 @@
       .address{margin-top:52px;}
 
       .timeline-section{margin-top:50px;padding:42px 18px 40px;}
-      .timeline-kicker{font-size:10px;letter-spacing:.22em;}
-      .timeline-title{font-size:46px;line-height:1;}
+      .timeline-kicker{font-size:10px;letter-spacing:.18em;}
+      .timeline-title{font-size:46px;line-height:1.05;}
       .timeline-subtitle{margin-top:20px;font-size:13.5px;width:min(92%,520px);}
       .day-timeline{margin-top:42px;padding-left:0;width:min(100%,520px);}
-      .day-timeline::before{left:69px;}
-      .timeline-item{grid-template-columns:70px 1fr;column-gap:34px;padding-bottom:44px;min-height:92px;}
-      .timeline-time{font-size:12px;}
-      .timeline-item::before{left:60px;top:6px;width:12px;height:12px;}
-      .timeline-item::after{left:65px;top:11px;width:4px;height:4px;}
-      .timeline-content h3{font-size:22px;margin-bottom:8px;}
-      .timeline-content p{font-size:13.5px;line-height:1.6;}
+      .day-timeline::before{left:calc(64px + 12px + 15px);}
+      .timeline-item{grid-template-columns:64px 30px minmax(0, 1fr);column-gap:12px;padding:0;min-height:96px;--marker-x:calc(64px + 15px);--marker-y:calc(3px + 7px);}
+      .timeline-time{font-size:20px;padding-top:3px;transform:translateY(-9px);}
+      .timeline-item::before{width:12px;height:12px;}
+      .timeline-item:not(:last-child)::after{width:1px;height:100%;}
+      .timeline-content h3{font-size:22px;margin-bottom:8px;line-height:1.05;}
+      .timeline-content p{font-size:13.5px;line-height:1.65;}
 
       .hands-photo{width:min(54vw,280px);margin-top:67px;}
       .dress{margin-top:52px;padding:66px 20px 58px;}
@@ -844,24 +974,24 @@
       .final-rsvp{margin-top:52px;padding:70px 20px 58px;}
       .story::before,.weekend::before,.dress::before,.gifts::before,.final-rsvp::before{top:23px;}
       .story::after,.weekend::after,.dress::after,.gifts::after,.final-rsvp::after{top:19px;}
-      .final-rsvp h2{font-size:24px;line-height:1.15;}
+      .final-rsvp h2{font-size:24px;line-height:1.05;}
       .rsvp-photo{width:min(92%,560px);}
     }
 
     @media (max-width: 420px){
       .hero{height:180svh;}
-      .hero-names{font-size:clamp(24px, 9vw, 38px);letter-spacing:.09em;}
+      .hero-names{font-size:clamp(20px, 7.4vw, 34px);letter-spacing:0;}
       .countdown{gap:12px;}
       .countdown-item{min-width:44px;}
       .countdown-number{font-size:25px;}
       .story-copy{font-size:14px;}
       .section-title{font-size:20px;}
       .timeline-title{font-size:39px;}
-      .day-timeline::before{left:61px;}
-      .timeline-item{grid-template-columns:62px 1fr;column-gap:28px;}
-      .timeline-time{font-size:11px;}
-      .timeline-item::before{left:52px;}
-      .timeline-item::after{left:57px;}
+      .day-timeline::before{left:calc(58px + 10px + 14px);}
+      .timeline-item{grid-template-columns:58px 28px minmax(0, 1fr);column-gap:10px;min-height:92px;--marker-x:calc(58px + 14px);--marker-y:calc(3px + 7px);}
+      .timeline-time{font-size:20px;}
+      .timeline-item::before{width:12px;height:12px;}
+      .timeline-item:not(:last-child)::after{width:1px;height:100%;}
       .timeline-content h3{font-size:20px;}
       .palette{gap:6px;}
       .dot{width:22px;height:22px;}
@@ -869,7 +999,7 @@
     }
 
     @media (prefers-reduced-motion: reduce){
-      .hero-names{top:15svh !important;}
+      .hero-names{top:0 !important;}
       .carousel-track.is-animated{transition:none;}
       .carousel-button{transition:none;}
     }
@@ -889,7 +1019,10 @@
 
     <section class="intro">
       <h1>Ons Feesviering</h1>
-      <p class="date">13 Februarie 2027 | Smitsfields Wedding Venue, Mpumalanga</p>
+      <p class="date">
+        <span class="wedding-date">13 Februarie 2027</span>
+        <span class="wedding-venue">Smitsfields Wedding Venue, Mpumalanga</span>
+      </p>
     </section>
 
 
@@ -993,12 +1126,12 @@
         <p class="timeline-kicker">Verloop van die dag</p>
         <h3 class="timeline-title">Ons Groot Dag</h3>
         <p class="timeline-subtitle">
-          Die tye hieronder dien as ’n riglyn en kan effens verander gedurende die viering.
+          Die tye hieronder dien as ’n riglyn. Die volledige program sal op die dag beskikbaar wees.
         </p>
 
         <div class="day-timeline">
           <div class="timeline-item">
-            <p class="timeline-time">14:00</p>
+            <p class="timeline-time">14:30</p>
             <div class="timeline-content">
               <h3>Gaste arriveer</h3>
               <p>Geniet iets om te drink en vind rustig julle sitplekke voordat die seremonie begin.</p>
@@ -1006,7 +1139,7 @@
           </div>
 
           <div class="timeline-item">
-            <p class="timeline-time">14:30</p>
+            <p class="timeline-time">15:00</p>
             <div class="timeline-content">
               <h3>Seremonie</h3>
               <p>Kom vier saam met ons wanneer ons ons geloftes aflê en ons nuwe hoofstuk as man en vrou begin.</p>
@@ -1014,26 +1147,10 @@
           </div>
 
           <div class="timeline-item">
-            <p class="timeline-time">15:45</p>
+            <p class="timeline-time">01:00</p>
             <div class="timeline-content">
-              <h3>Foto’s &amp; verversings</h3>
-              <p>Neem saam met ons foto’s, geniet ligte verversings en kuier gesellig terwyl die vieringe voortgaan.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <p class="timeline-time">18:30</p>
-            <div class="timeline-content">
-              <h3>Onthaal</h3>
-              <p>Ons beweeg oor na die onthaal vir die aand se verwelkoming, aandete, toesprake en lekker saamkuier.</p>
-            </div>
-          </div>
-
-          <div class="timeline-item">
-            <p class="timeline-time">20:00</p>
-            <div class="timeline-content">
-              <h3>Eerste dans &amp; partytjie</h3>
-              <p>Sluit by ons aan vir ons eerste dans en ’n feestelike aand op die dansvloer saam met familie en vriende.</p>
+              <h3>Tot laat</h3>
+              <p>Geniet die res van die dag saam met ons.</p>
             </div>
           </div>
         </div>
@@ -1068,14 +1185,14 @@
       </div>
 
       <div class="dress-grid">
-        <strong>Mans</strong>
+        <strong>MANS</strong>
         <div>Formele drag. Voltooi asseblief jou voorkoms<br>met ’n baadjie en/of das.</div>
 
-        <strong>Dames</strong>
+        <strong>DAMES</strong>
         <div>Sagte pastelkleure word verwelkom. Vermy<br>asseblief wit en pienk.</div>
       </div>
 
-      <div class="palette-label">Kleurskema</div>
+      <div class="palette-label">KLEURSKEMA</div>
       <div class="palette" aria-label="Kleurskema">
         <span class="dot" style="background:var(--sage)"></span>
         <span class="dot" style="background:var(--olive)"></span>
@@ -1087,8 +1204,18 @@
       </div>
 
       <div class="accommodation">
+        <div class="accommodation-notice" aria-label="Akkommodasie-inligting">
+          <h3>AKKOMMODASIE</h3>
+          <p>
+            Akkommodasie by Smitsfield is reeds deur die bruidspaar vir die trounaweek bespreek.<br>
+            Daar is verskeie pragtige gastehuise en verblyf opsies naby die venue, maar akkommodasie in die omgewing is beperk en word gewoonlik lank voor die tyd vol bespreek.
+          </p>
+          <p>
+            Gebruik gerus die akkommodasie gids hieronder om verblyf naby Smitsfield te vind.
+          </p>
+        </div>
         <!-- Replace # with your accommodation page/link when ready. -->
-        <a class="button" href="https://ugc.production.linktr.ee/3744183c-4114-49c8-b111-eed2c923d9f3_Alternative-accommodation---4-.pdf-3.pdf">Verblyf in die Area</a>
+        <a class="button" href="Verblyf in die Area.pdf">Verblyf in die Area</a>
       </div>
     </section>
 
@@ -1172,20 +1299,37 @@
     (() => {
       const hero = document.querySelector(".hero");
       const heading = document.querySelector(".hero-names");
+      const stickyLayer = document.querySelector(".hero-text-sticky");
+      const mobileHero = window.matchMedia("(max-width: 700px)");
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
       let frameRequested = false;
 
       function positionHeroHeading() {
         frameRequested = false;
-        const viewportHeight = window.innerHeight;
+        const viewportHeight = Math.max(window.innerHeight, window.visualViewport?.height || window.innerHeight);
         const heroBounds = hero.getBoundingClientRect();
-        const scrollDistance = Math.max(1, hero.offsetHeight - viewportHeight);
-        const progress = reducedMotion.matches
+        const movementHeight = mobileHero.matches ? stickyLayer.clientHeight : viewportHeight;
+        const scrollDistance = Math.max(1, hero.offsetHeight - movementHeight);
+        const sectionProgress = reducedMotion.matches
           ? 0
           : Math.min(1, Math.max(0, -heroBounds.top / scrollDistance));
-        const upperPosition = viewportHeight * .15;
-        const lowerPosition = viewportHeight - heading.offsetHeight - (viewportHeight * .1);
-        const position = upperPosition + ((lowerPosition - upperPosition) * progress);
+
+        let position;
+        if (mobileHero.matches) {
+          const startPosition = movementHeight * .10;
+          const bottomClearance = movementHeight * .12;
+          const endPosition = Math.max(
+            startPosition,
+            movementHeight - heading.offsetHeight - bottomClearance
+          );
+          const movementProgress = Math.min(1, sectionProgress / .88);
+          position = startPosition + ((endPosition - startPosition) * movementProgress);
+        } else {
+          const startPosition = viewportHeight * .10;
+          const endPosition = viewportHeight - heading.offsetHeight - (viewportHeight * .10);
+          position = startPosition + ((endPosition - startPosition) * sectionProgress);
+        }
+
         heading.style.setProperty("--hero-heading-y", `${Math.max(0, position)}px`);
       }
 

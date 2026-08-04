@@ -74,6 +74,10 @@
     img{display:block;max-width:100%;}
     a{color:inherit;}
 
+    .keep-together{
+      white-space:nowrap;
+    }
+
     .page{
       width:min(100%, 1120px);
       margin:0 auto;
@@ -931,9 +935,15 @@
       .carousel-button{width:30px;height:30px;font-size:19px;}
 
       .weekend{margin-top:52px;padding:68px 20px 58px;}
-      .event-block{width:min(94%,450px);margin-top:33px;}
+      .event-block{width:100%;margin-top:33px;}
       .event-block h3{font-size:17px;}
-      .event-block p{font-size:14px;text-wrap:pretty;}
+      .event-block p{
+        font-size:14px;
+        text-wrap:balance;
+        overflow-wrap:normal;
+        word-break:normal;
+        hyphens:none;
+      }
       .event-block p br{display:none;}
       .event-block + .event-block{margin-top:45px;}
       .address{margin-top:52px;}
@@ -941,7 +951,15 @@
       .timeline-section{margin-top:50px;padding:42px 18px 40px;}
       .timeline-kicker{margin-bottom:16px;font-size:10px;letter-spacing:.18em;}
       .timeline-title{font-size:46px;line-height:1.05;}
-      .timeline-subtitle{margin-top:20px;font-size:13.5px;width:min(92%,520px);}
+      .timeline-subtitle{
+        width:100%;
+        margin-top:20px;
+        font-size:13.5px;
+        text-wrap:balance;
+        overflow-wrap:normal;
+        word-break:normal;
+        hyphens:none;
+      }
       .day-timeline{margin-top:42px;padding-left:0;width:min(100%,520px);}
       .day-timeline::before{left:calc(64px + 12px + 15px);}
       .timeline-item{grid-template-columns:64px 30px minmax(0, 1fr);column-gap:12px;padding:0;min-height:96px;--marker-x:calc(64px + 15px);--marker-y:calc(3px + 7px);}
@@ -1116,7 +1134,7 @@
         <h3>Die Begin Van die Naweek</h3>
         <p>
           Ons verwelkom al ons gaste wat die naweek saam met ons by<br>
-          Smitsfield kan deurbring om Vrydagaand die Marx Makietie saam<br>
+          Smitsfield kan deurbring om Vrydagaand die <span class="keep-together">Marx Makietie saam</span><br>
           af te skop met lekker kos, goeie geselskap en ’n<br>
           ontspanne kuier.
         </p>
@@ -1127,7 +1145,7 @@
         <p class="timeline-kicker">Verloop van die dag</p>
         <h3 class="timeline-title">Ons Groot Dag</h3>
         <p class="timeline-subtitle">
-          Die tye hieronder dien as ’n riglyn. Die volledige program sal op die dag beskikbaar wees.
+          Die tye hieronder dien as ’n riglyn. Die volledige program sal op die dag <span class="keep-together">beskikbaar wees.</span>
         </p>
 
         <div class="day-timeline">

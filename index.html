@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preload" href="images/hero.jpg" as="image" fetchpriority="high">
 
   <style>
     :root{
@@ -45,6 +46,7 @@
       font-family:"Cormorant Garamond", Georgia, serif;
       font-weight:400;
       -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
     }
 
     img{display:block;max-width:100%;}
@@ -53,7 +55,7 @@
     .page{
       width:min(100%, 1120px);
       margin:0 auto;
-      padding:0 28px 120px;
+      padding:0 clamp(18px, 3vw, 28px) 120px;
     }
 
     .hero{
@@ -98,10 +100,12 @@
       height:100svh;
       margin-top:-100svh;
       pointer-events:none;
+      display:grid;
+      place-items:center;
     }
 
     .hero-names{
-      width:100%;
+      width:min(100%, 860px);
       text-align:center;
       color:#fff;
       font-size:clamp(34px, 6vw, 78px);
@@ -109,11 +113,10 @@
       letter-spacing:.12em;
       text-transform:uppercase;
       text-shadow:0 2px 22px rgba(0,0,0,.24);
-      padding:0 18px;
-      margin-top:0;
-      position:absolute;
-      top:var(--hero-heading-y, 15svh);
-      left:0;
+      padding:0 clamp(18px, 5vw, 32px);
+      margin:0;
+      transform:translateY(var(--hero-heading-y, 0px));
+      will-change:transform;
     }
 
     .intro{
@@ -125,7 +128,7 @@
     .section-title{
       margin:0;
       text-transform:uppercase;
-      font-size:25px;
+      font-size:clamp(22px, 2.2vw, 25px);
       font-weight:500;
       letter-spacing:.015em;
     }
@@ -207,7 +210,7 @@
       --section-bg:var(--soft-cream);
       position:relative;
       margin-top:100px;
-      padding:82px 58px 76px;
+      padding:clamp(56px, 8vw, 82px) clamp(24px, 4vw, 58px) clamp(56px, 8vw, 76px);
       text-align:center;
       background:var(--soft-cream);
     }
@@ -271,7 +274,7 @@
     }
 
     .story-carousel{
-      --carousel-gap:14px;
+      --carousel-gap:clamp(10px, 1.5vw, 14px);
       position:relative;
       overflow:hidden;
       touch-action:pan-y;
@@ -297,6 +300,18 @@
       overflow:hidden;
       border-radius:3px;
       background:#e9e5df;
+    }
+
+    @media (max-width: 900px){
+      .carousel-slide{flex-basis:calc((100% - (2 * var(--carousel-gap))) / 3);}
+    }
+
+    @media (max-width: 680px){
+      .carousel-slide{flex-basis:calc((100% - var(--carousel-gap)) / 2);}
+    }
+
+    @media (max-width: 420px){
+      .carousel-slide{flex-basis:100%;}
     }
 
     .carousel-slide img{
@@ -342,7 +357,7 @@
       --section-bg:var(--soft-sage);
       position:relative;
       margin-top:72px;
-      padding:82px 58px 76px;
+      padding:clamp(56px, 8vw, 82px) clamp(24px, 4vw, 58px) clamp(56px, 8vw, 76px);
       text-align:center;
       background:var(--section-bg);
     }
@@ -398,7 +413,7 @@
     .timeline-section{
       width:min(860px,100%);
       margin:72px auto 0;
-      padding:52px 46px 50px;
+      padding:clamp(28px, 5vw, 52px) clamp(22px, 4vw, 46px) clamp(28px, 5vw, 50px);
       text-align:left;
       background:rgba(255,255,255,.58);
       border:1px solid rgba(74,70,66,.11);
@@ -417,7 +432,7 @@
     .timeline-title{
       margin:0;
       text-align:center;
-      font-size:70px;
+      font-size:clamp(46px, 8vw, 70px);
       line-height:.95;
       font-weight:400;
     }
@@ -526,7 +541,7 @@
       --section-bg:var(--soft-blush);
       position:relative;
       margin-top:72px;
-      padding:78px 58px 74px;
+      padding:clamp(56px, 8vw, 78px) clamp(24px, 4vw, 58px) clamp(56px, 8vw, 74px);
       text-align:center;
       background:var(--section-bg);
     }
@@ -662,10 +677,10 @@
       position:relative;
       width:min(920px,100%);
       margin:72px auto 0;
-      padding:80px 58px 68px;
+      padding:clamp(56px, 8vw, 80px) clamp(24px, 4vw, 58px) clamp(56px, 8vw, 68px);
       display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:72px;
+      grid-template-columns:minmax(0, 1.05fr) minmax(0, .95fr);
+      gap:clamp(34px, 5vw, 72px);
       align-items:center;
       background:var(--section-bg);
     }
@@ -710,14 +725,14 @@
       --section-bg:var(--soft-cream);
       position:relative;
       margin-top:72px;
-      padding:84px 48px 72px;
+      padding:clamp(56px, 8vw, 84px) clamp(24px, 4vw, 48px) clamp(56px, 8vw, 72px);
       text-align:center;
       background:var(--section-bg);
     }
 
     .final-rsvp h2{
       margin:0;
-      font-size:31px;
+      font-size:clamp(24px, 3vw, 31px);
       font-weight:500;
       text-transform:uppercase;
       letter-spacing:.005em;
@@ -865,7 +880,7 @@
 
     <section class="hero" aria-label="Ruben en Bianca">
       <div class="hero-photo">
-        <img src="images/hero.jpg" alt="Ruben en Bianca" />
+        <img src="images/hero.jpg" alt="Ruben en Bianca" loading="eager" decoding="async" fetchpriority="high" />
       </div>
       <div class="hero-text-sticky">
         <div class="hero-names">Ruben &amp; Bianca</div>
@@ -1032,7 +1047,7 @@
       </div>
 
       <div class="hands-photo">
-        <img src="images/Hands Close Up.jpg" alt="Ruben en Bianca hou hande vas" />
+        <img src="images/hands-close-up.jpg" alt="Ruben en Bianca hou hande vas" loading="lazy" decoding="async" />
       </div>
     </section>
 
@@ -1079,7 +1094,7 @@
 
     <section class="gifts" id="geskenke">
       <div class="gift-photo">
-        <img src="images/gifts.jpg" alt="Ruben en Bianca" />
+        <img src="images/gifts.jpg" alt="Ruben en Bianca" loading="lazy" decoding="async" />
       </div>
 
       <div class="gift-copy">
@@ -1108,7 +1123,7 @@
       </div>
 
       <div class="rsvp-photo">
-        <img src="images/rsvp.jpg" alt="Ruben en Bianca stap saam" />
+        <img src="images/rsvp.jpg" alt="Ruben en Bianca stap saam" loading="lazy" decoding="async" />
       </div>
 
       <div class="rsvp-button-wrap">
@@ -1192,10 +1207,27 @@
       const status = document.getElementById("carousel-status");
       const previousButton = carousel.querySelector(".carousel-prev");
       const nextButton = carousel.querySelector(".carousel-next");
-      const directoryUrl = new URL("image%20carousel/", document.baseURI);
-      const supportedImage = /\.(?:jpe?g|png|webp|avif)$/i;
       const cloneCount = 4;
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const carouselImages = [
+        "image-carousel/IMG_4271.JPG",
+        "image-carousel/IMG_4290.JPG",
+        "image-carousel/IMG_4294.JPG",
+        "image-carousel/IMG_4297.JPG",
+        "image-carousel/IMG_4298.JPG",
+        "image-carousel/IMG_4319.JPG",
+        "image-carousel/IMG_4320-2.JPG",
+        "image-carousel/IMG_4323.JPG",
+        "image-carousel/IMG_4334.JPG",
+        "image-carousel/IMG_4348-2.JPG",
+        "image-carousel/IMG_4353-2.JPG",
+        "image-carousel/IMG_4356.JPG",
+        "image-carousel/IMG_4371.JPG",
+        "image-carousel/IMG_4374.JPG",
+        "image-carousel/IMG_4383.JPG",
+        "image-carousel/IMG_4387.JPG",
+        "image-carousel/IMG_4393-2.jpg"
+      ];
       let images = [];
       let currentIndex = cloneCount;
       let autoplayTimer;
@@ -1259,7 +1291,7 @@
         image.width = 800;
         image.height = 1000;
         image.decoding = "async";
-        image.loading = originalIndex < 4 ? "eager" : "lazy";
+        image.loading = "eager";
         slide.append(image);
         return slide;
       }
@@ -1277,28 +1309,9 @@
         startAutoplay();
       }
 
-      async function loadImages() {
+      function loadImages() {
         try {
-          const response = await fetch(directoryUrl);
-          if (!response.ok) throw new Error("Die fotolêer kon nie gelees word nie.");
-          const listing = new DOMParser().parseFromString(await response.text(), "text/html");
-          const directoryPath = directoryUrl.pathname.endsWith("/") ? directoryUrl.pathname : `${directoryUrl.pathname}/`;
-          const uniqueSources = new Set();
-
-          listing.querySelectorAll("a[href]").forEach(link => {
-            const source = new URL(link.getAttribute("href"), directoryUrl);
-            const relativePath = decodeURIComponent(source.pathname.slice(directoryPath.length));
-            if (
-              source.origin === directoryUrl.origin &&
-              source.pathname.startsWith(directoryPath) &&
-              relativePath &&
-              !relativePath.startsWith(".") &&
-              !relativePath.includes("/") &&
-              supportedImage.test(relativePath)
-            ) uniqueSources.add(source.href);
-          });
-
-          images = [...uniqueSources].sort((a, b) => decodeURIComponent(a).localeCompare(decodeURIComponent(b), undefined, { numeric:true }));
+          images = carouselImages.map(source => new URL(source, document.baseURI).href);
           if (!images.length) throw new Error("Geen ondersteunde foto’s is gevind nie.");
           render();
         } catch (error) {

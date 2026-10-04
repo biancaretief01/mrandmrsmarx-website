@@ -1045,9 +1045,113 @@
       .carousel-track.is-animated{transition:none;}
       .carousel-button{transition:none;}
     }
-  </style>
+
+ /* =========================
+   FLOATING RSVP BUTTON
+========================= */
+
+.floating-rsvp {
+  position: fixed;
+  top: 30px;
+  right: 34px;
+  z-index: 9999;
+
+  min-width: 104px;
+  padding: 11px 22px;
+
+  background: rgba(92, 82, 72, 0.68);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  color: #fffdf8;
+
+  border: 1px solid rgba(255, 253, 248, 0.72);
+  border-radius: 1px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+}
+
+.floating-rsvp:hover {
+  background: rgba(250, 248, 245, 0.92);
+  color: #4f473f;
+  transform: translateY(-1px);
+}
+
+.floating-rsvp.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+
+/* =========================
+   RSVP INSTRUCTION
+========================= */
+
+.rsvp-instruction {
+  margin: 18px auto 28px;
+  max-width: 520px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--muted);
+
+  text-align: center;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .floating-rsvp {
+    top: 16px;
+    right: 16px;
+
+    min-width: 88px;
+    padding: 9px 16px;
+
+    font-size: 11px;
+    letter-spacing: 0.20em;
+  }
+
+  .rsvp-instruction {
+    max-width: 320px;
+    font-size: 16px;
+  }
+}
+</style>
 </head>
+
 <body>
+
+  <a
+    href="https://forms.gle/ynLiAT72tqPm9st27"
+    class="floating-rsvp"
+    id="floatingRsvp"
+    target="_blank"
+    rel="noopener"
+  >
+    RSVP
+  </a>
+
   <main class="page">
 
     <section class="hero" aria-label="Ruben en Bianca">
@@ -1227,23 +1331,40 @@
       </div>
 
       <div class="dress-grid">
-        <strong>MANS</strong>
-        <div>Formele drag. Voltooi asseblief jou voorkoms<br>met ’n baadjie en/of das.</div>
 
-        <strong>DAMES</strong>
-        <div>Sagte pastelkleure word verwelkom. Vermy<br>asseblief wit en pienk.</div>
-      </div>
+  <strong>MANS</strong>
+  <div>
+    Formele drag. ’n Vol pak in enige kleur is welkom.<br>
+    Geen chinos, jeans of tekkies nie.
+  </div>
 
-      <div class="palette-label">KLEURSKEMA</div>
-      <div class="palette" aria-label="Kleurskema">
-        <span class="dot" style="background:var(--sage)"></span>
-        <span class="dot" style="background:var(--olive)"></span>
-        <span class="dot" style="background:var(--peach)"></span>
-        <span class="dot" style="background:var(--cream)"></span>
-        <span class="dot" style="background:var(--lilac)"></span>
-        <span class="dot" style="background:var(--periwinkle)"></span>
-        <span class="dot" style="background:var(--blue)"></span>
-      </div>
+  <div class="palette" aria-label="Kleurskema vir mans">
+    <span class="dot" style="background:#26354A"></span>
+    <span class="dot" style="background:#222222"></span>
+    <span class="dot" style="background:#555555"></span>
+    <span class="dot" style="background:#B8B6B0"></span>
+    <span class="dot" style="background:#74765B"></span>
+    <span class="dot" style="background:#806B58"></span>
+    <span class="dot" style="background:#C8BBA9"></span>
+  </div>
+
+  <strong>DAMES</strong>
+  <div>
+    Sagte pastelkleure word verwelkom. Vermy asseblief wit en pienk.<br>
+    Midi- of maxi-rokke.
+  </div>
+
+  <div class="palette" aria-label="Kleurskema vir dames">
+    <span class="dot" style="background:var(--sage)"></span>
+    <span class="dot" style="background:var(--olive)"></span>
+    <span class="dot" style="background:var(--peach)"></span>
+    <span class="dot" style="background:var(--cream)"></span>
+    <span class="dot" style="background:var(--lilac)"></span>
+    <span class="dot" style="background:var(--periwinkle)"></span>
+    <span class="dot" style="background:var(--blue)"></span>
+  </div>
+
+</div>
 
       <div class="accommodation">
         <div class="accommodation-notice" aria-label="Akkommodasie-inligting">
@@ -1287,9 +1408,13 @@
     <section class="final-rsvp" id="rsvp">
       <h2>Ons sien uit om saam met julle fees te vier!</h2>
       <div class="rsvp-deadline">
-        RSVP ASSEBLIEF VOOR<br>
-        13 NOVEMBER 2026
-      </div>
+  RSVP ASSEBLIEF VOOR<br>
+  13 NOVEMBER 2026
+</div>
+
+<p class="rsvp-instruction">
+  Klik asseblief op die RSVP-knoppie hieronder om julle besonderhede in te vul.
+</p>
 
       <div class="rsvp-photo">
         <img src="images/rsvp.jpg" alt="Ruben en Bianca stap saam" loading="lazy" decoding="async" />
@@ -1555,6 +1680,30 @@
       reducedMotion.addEventListener("change", startAutoplay);
       loadImages();
     })();
+    /* Hide floating RSVP button when final RSVP section is visible */
+
+const floatingRsvp = document.getElementById("floatingRsvp");
+const finalRsvpSection = document.querySelector(".final-rsvp");
+
+if (floatingRsvp && finalRsvpSection) {
+  const rsvpObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          floatingRsvp.classList.add("is-hidden");
+        } else {
+          floatingRsvp.classList.remove("is-hidden");
+        }
+      });
+    },
+    {
+      threshold: 0.15
+    }
+  );
+
+  rsvpObserver.observe(finalRsvpSection);
+}
+
   </script>
 
 </body>

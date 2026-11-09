@@ -1137,6 +1137,215 @@
     font-size: 16px;
   }
 }
+/* EXISTING CSS ABOVE */
+
+
+/* FINAL WEDDING DRESS CODE */
+
+.friday-dress {
+  /* Your new styling */
+}
+
+.saturday-dress {
+  /* Your new styling */
+}
+
+/* FINAL DRESS CODE REFINEMENTS */
+
+.friday-dress {
+  padding-top: 42px;
+  padding-bottom: 55px;
+  margin-bottom: 0;
+  border-bottom: 1px solid #d8d3c9;
+}
+
+.saturday-dress {
+  padding-top: 55px;
+}
+
+.friday-dress h3,
+.saturday-dress h3 {
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
+
+.friday-dress h4,
+.saturday-dress h4 {
+  font-size: 29px;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.friday-dress p {
+  margin: 14px auto;
+  line-height: 1.65;
+}
+
+.friday-dress .palette {
+  margin-top: 28px;
+}
+
+.saturday-dress .subhead {
+  font-size: 16px;
+  letter-spacing: 0.22em;
+  margin-bottom: 35px;
+}
+
+.saturday-dress .dress-grid strong {
+  margin-top: 30px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  letter-spacing: 0.07em;
+}
+
+.saturday-dress .dress-grid > div {
+  line-height: 1.7;
+}
+
+.saturday-dress .palette-label {
+  margin-top: 42px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+}
+
+.saturday-dress .palette {
+  margin-top: 20px;
+}
+
+.saturday-dress .weather-indicator {
+  margin-top: 55px;
+  padding-top: 35px;
+}
+
+@media (max-width: 600px) {
+  .friday-dress {
+    padding-top: 32px;
+    padding-bottom: 42px;
+  }
+
+  .saturday-dress {
+    padding-top: 42px;
+  }
+
+  .friday-dress h4,
+  .saturday-dress h4 {
+    font-size: 25px;
+  }
+
+  .friday-dress h3,
+  .saturday-dress h3 {
+    font-size: 16px;
+  }
+}
+/* FINAL SPACING: WEATHER AND ACCOMMODATION */
+
+.saturday-dress .weather-indicator {
+  margin-top: 35px;
+  padding-top: 28px;
+}
+
+.accommodation {
+  margin-top: 40px;
+  padding-top: 28px;
+}
+
+.accommodation-notice {
+  padding: 26px 30px;
+}
+
+@media (max-width: 600px) {
+  .saturday-dress .weather-indicator {
+    margin-top: 32px;
+    padding-top: 24px;
+  }
+
+  .accommodation {
+    margin-top: 36px;
+    padding-top: 24px;
+  }
+
+  .accommodation-notice {
+    padding: 22px 20px;
+  }
+}
+
+/* FINAL WEATHER TYPOGRAPHY */
+
+.saturday-dress .weather-label {
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  font-weight: 500;
+}
+
+.saturday-dress .weather-temperature {
+  font-size: 24px;
+  margin-top: 12px;
+}
+
+.saturday-dress .weather-note {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.saturday-dress .weather-link {
+  font-size: 10px;
+  margin-top: 18px;
+}
+
+@media (max-width: 600px) {
+  .saturday-dress .weather-label {
+    font-size: 12px;
+  }
+
+  .saturday-dress .weather-temperature {
+    font-size: 22px;
+  }
+}
+
+/* PINTEREST BUTTON — MATCH EXISTING WEBSITE */
+
+.saturday-inspiration {
+  max-width: 460px;
+  margin: 36px auto 0;
+  text-align: center;
+}
+
+.saturday-inspiration p {
+  margin: 0 0 16px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #77716A;
+}
+
+.saturday-inspiration .inspiration-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 22px;
+  min-height: 32px;
+  border: 1px solid rgba(74,70,66,.32);
+  border-radius: 3px;
+  background: transparent;
+  color: var(--ink);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .12em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background .2s ease;
+}
+
+.saturday-inspiration .inspiration-link:hover {
+  background: rgba(255,255,255,.28);
+}
+
+.saturday-inspiration .inspiration-link:focus-visible {
+  outline: 2px solid #756e65;
+  outline-offset: 2px;
+}
+
 </style>
 </head>
 
@@ -1265,7 +1474,7 @@
           af te skop met lekker kos, goeie geselskap en ’n<br>
           ontspanne kuier.
         </p>
-        <p class="event-time">Vrydag 18:00 vir 19:00</p>
+        <p class="event-time">Vrydag 12 Februarie 2027 | 17:30 vir 18:00</p>
       </div>
 
       <section class="timeline-section" aria-label="Ons groot dag se verloop">
@@ -1314,57 +1523,107 @@
       </div>
     </section>
 
-    <section class="dress" id="kleredrag">
-      <h2 class="section-title">Kleredrag</h2>
-      <p class="subhead">SOMER FORMEEL</p>
+    
 
-      <div class="weather-indicator" aria-label="Verwagte temperatuur">
-        <p class="weather-label">Verwagte temperatuur</p>
-        <p class="weather-temperature">14°C - 27°C</p>
-        <p class="weather-note">’n Ligte baadjie vir die aand word aanbeveel.</p>
-        <a
-          class="weather-link"
-          href="https://www.google.com/search?q=Smitsfield+Mpumalanga+weather+forecast"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Weervoorspelling</a>
+<section class="dress" id="kleredrag">
+  <h2 class="section-title">Kleredrag</h2>
+
+  <!-- FRIDAY -->
+  <div class="friday-dress">
+    <h3>VRYDAG | 12 FEBRUARIE 2027</h3>
+    <h4>Die Begin van die Naweek</h4>
+
+    <p>
+      Bottergeel, wit, roomkleurige en sagte
+      vanieljeskakerings.
+    </p>
+    <p>
+      Linne en ligte somerstowwe vir ’n elegante,
+      ontspanne somersaand.
+    </p>
+
+    <div class="palette" aria-label="Vrydag se kleurpalet">
+      <span class="dot" style="background:#FFFFFF"></span>
+      <span class="dot" style="background:#FAF5E9"></span>
+      <span class="dot" style="background:#F3E8D3"></span>
+      <span class="dot" style="background:#EADABD"></span>
+      <span class="dot" style="background:#FFF5C4"></span>
+      <span class="dot" style="background:#F9E6A0"></span>
+      <span class="dot" style="background:#FFE078"></span>
+      <span class="dot" style="background:#F7CC64"></span>
+    </div>
+  </div>
+
+  <!-- SATURDAY -->
+  <div class="saturday-dress">
+    <h3>SATERDAG | 13 FEBRUARIE 2027</h3>
+    <h4>Ons Groot Dag</h4>
+    <p class="subhead">SOMERFORMEEL</p>
+
+    <div class="dress-grid">
+      <strong>MANS</strong>
+      <div>
+        Here in pakke of formele baadjies met dasse.<br>
+        Geen chinos, jeans of tekkies nie.
       </div>
 
-      <div class="dress-grid">
+      <strong>DAMES</strong>
+      <div>
+        Elegante midi- of lang rokke.<br>
+        ’n Verskeidenheid kleure is welkom.<br>
+        Wit word vir die bruid gereserveer.
+      </div>
+    </div>
 
-  <strong>MANS</strong>
-  <div>
-    Formele drag. ’n Vol pak in enige kleur is welkom.<br>
-    Geen chinos, jeans of tekkies nie.
-  </div>
+    <p class="palette-label">VOORGESTELDE KLEURPALET</p>
 
-  <div class="palette" aria-label="Kleurskema vir mans">
-    <span class="dot" style="background:#26354A"></span>
-    <span class="dot" style="background:#222222"></span>
-    <span class="dot" style="background:#555555"></span>
-    <span class="dot" style="background:#B8B6B0"></span>
-    <span class="dot" style="background:#74765B"></span>
-    <span class="dot" style="background:#806B58"></span>
-    <span class="dot" style="background:#C8BBA9"></span>
-  </div>
+    <div class="palette" aria-label="Saterdag se kleurpalet">
+      <span class="dot" style="background:#CADBE2"></span>
+      <span class="dot" style="background:#B9AACB"></span>
+      <span class="dot" style="background:#D6A0A5"></span>
+      <span class="dot" style="background:#F4A687"></span>
+      <span class="dot" style="background:#F8D572"></span>
+      <span class="dot" style="background:#C6C98C"></span>
+      <span class="dot" style="background:#686B48"></span>
+      <span class="dot" style="background:#604336"></span>
+      <span class="dot" style="background:#171717"></span>
+    </div>
 
-  <strong>DAMES</strong>
-  <div>
-    Sagte pastelkleure word verwelkom. Vermy asseblief wit en pienk.<br>
-    Midi- of maxi-rokke.
-  </div>
+    <!-- PINTEREST INSPIRATION -->
+    
+<div class="saturday-inspiration">
+  <p>Vir ’n bietjie uitrusting-inspirasie</p>
 
-  <div class="palette" aria-label="Kleurskema vir dames">
-    <span class="dot" style="background:var(--sage)"></span>
-    <span class="dot" style="background:var(--olive)"></span>
-    <span class="dot" style="background:var(--peach)"></span>
-    <span class="dot" style="background:var(--cream)"></span>
-    <span class="dot" style="background:var(--lilac)"></span>
-    <span class="dot" style="background:var(--periwinkle)"></span>
-    <span class="dot" style="background:var(--blue)"></span>
-  </div>
-
+  <a
+    class="inspiration-link"
+    href="https://pin.it/7mBKpC8ih"
+    target="_blank"
+    rel="noopener noreferrer">
+    PINTEREST MOODBOARD
+  </a>
 </div>
+
+    <!-- WEATHER -->
+    <div class="weather-indicator"
+         aria-label="Verwagte temperatuur">
+
+      <p class="weather-label">Verwagte temperatuur</p>
+      <p class="weather-temperature">14°C – 27°C</p>
+      <p class="weather-note">
+        ’n Ligte baadjie vir die aand word aanbeveel.
+      </p>
+
+      <a
+        class="weather-link"
+        href="https://www.google.com/search?q=Smitsfield+Mpumalanga+weather+forecast"
+        target="_blank"
+        rel="noopener noreferrer">
+        Weervoorspelling
+      </a>
+    </div>
+  </div>
+
+  <!-- KEEP EXISTING ACCOMMODATION BELOW -->
 
       <div class="accommodation">
         <div class="accommodation-notice" aria-label="Akkommodasie-inligting">
@@ -1429,8 +1688,10 @@
   </main>
 
   <script>
-    // Wedding ceremony: 13 February 2027 at 15:30, South Africa time (UTC+2)
-    const weddingDate = new Date("2027-02-13T15:30:00+02:00").getTime();
+    // Wedding ceremony: 13 February 2027 at 15:00, South Africa time (UTC+2)
+    
+const weddingDate = new Date("2027-02-13T15:00:00+02:00").getTime();
+
 
     const daysEl = document.getElementById("days");
     const hoursEl = document.getElementById("hours");
